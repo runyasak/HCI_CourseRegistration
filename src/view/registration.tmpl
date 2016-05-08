@@ -1,0 +1,164 @@
+<body>
+    <!-- <nav class="navbar navbar-fixed-top navbar-light bg-faded">
+      <a class="navbar-brand" href="#">Class Enrollment</a>
+    </nav> -->
+    <nav class="navbar navbar-inverse sidebar" role="navigation">
+        <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-sidebar-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Class Enrollment</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+            <li ><a href="#">Profile<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>
+            <li ><a href="#">Messages<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span></a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings <span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-cog"></span></a>
+              <ul class="dropdown-menu forAnimate" role="menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+                <li class="divider"></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Home<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+            <li ><a href="#">Profile<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>
+            <li ><a href="#">Messages<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span></a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings <span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-cog"></span></a>
+              <ul class="dropdown-menu forAnimate" role="menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+                <li class="divider"></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div ng-controller="appController as app">
+      <!-- <div class="col-sm-2 col-md-1 sidebar">
+            <ul class="nav nav-sidebar">
+              <li><a href="#">Profile</a></li>
+              <li><a href="#">Logout</a></li>
+              <li ng-click="export_json()"><a href="#">Export JSON</a></li>
+            </ul>
+      </div> -->
+      <form class="form-inline">
+        <div class="form-group">
+          <label>Course ID</label>
+          <input type="text" class="form-control" ng-model="search" placeholder="EX: 01XXXXXX">
+        </div>
+        <label id="your-course">Your course</label>
+      </form>
+      <div class="table-group"> 
+        <table class="table" id="course-table">
+          <thead class="thead-inverse">
+          </thead>
+          <tbody ng-repeat="course in courses | filter:search">
+            <tr>
+              <th scope="row">{{course.id}}</th>
+              <td>{{course.name.en}}</td>
+              <td>
+                <!-- Button trigger modal -->
+                <button class="btn icon-btn btn-success" data-toggle="modal" ng-click="select_enroll(course)" data-target=".enroll-modal" data-backdrop="static" data-keyboard="false"><span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span>Enroll</button>
+                <!-- <a class="btn icon-btn btn-success" href="#"><span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span>Add</a> -->
+              </td>
+            </tr>
+            <!-- <tr>
+              <th scope="row">0121999</th>
+              <td>Test Subject</td>
+              <td><button type="submit" class="btn btn-primary">Enroll</button></td>
+            </tr> -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Your course table -->
+      <div class="your-course-table-group"> 
+        <table class="table" id="registered-table">
+          <thead class="thead-inverse">
+            <!-- <tr>
+              <th>Course ID</th>
+              <th colspan="2">Course Name</th>
+            </tr> -->
+          </thead>
+          <tbody ng-repeat="course in registered_courses">
+            <tr>
+              <th scope="row">{{course.id}}</th>
+              <td>{{course.name.en}}</td>
+              <td>
+                <!-- Button trigger modal -->
+                <button class="btn icon-btn btn-danger" data-toggle="modal" ng-click="drop_course(course)"><span class="glyphicon btn-glyphicon glyphicon-minus img-circle text-warning"></span>Drop</button>
+              </td>
+            </tr>
+            <!-- <tr>
+              <th scope="row">0121999</th>
+              <td>Test Subject</td>
+              <td><button type="submit" class="btn btn-primary">Enroll</button></td>
+            </tr> -->
+          </tbody>
+        </table>
+      </div>
+      <!-- <div class="modal fade drop-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <h1 id="course">Confirmation</h1>
+            </div>
+            <div class="modal-body">
+               <h2 id="enroll">Are you sure?</h2>
+               <div class="confirm-btn-group">
+                 <button class="btn btn-primary" type="button">YES</button>
+                 <button class="btn btn-primary" type="button">NO</button>
+               </div>
+               
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+      <div class="modal fade enroll-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h1 id="course">{{selected_course.id}} - {{selected_course.name.en}}</h1>
+                    <!-- <h4 class="modal-title">Modal title</h4> -->
+                  </div>
+                  <div class="modal-body">
+                     <ul class="list-group" ng-repeat="section in course_section">
+                        <li class="list-group-item">{{section.id}} - {{section.date}} <button class="btn btn-primary" ng-click="register_course(selected_course)" aria-label="Close" data-dismiss="modal">Register</button></li>
+
+                        <!-- <li class="list-group-item">Deleted</li> 
+                        <li class="list-group-item">Warnings</li>  -->
+                     </ul>
+                  </div>
+                  <!-- <h2 id="enroll">{{selected_course.description.en}}</h2> -->
+                  <h3 id="detail">{{selected_course.description.en}}</h3>
+                  <!-- <h3 id="credit">{{selected_course.description.en}}</h3> -->
+                </div>
+              </div>
+            </div>
+    </div>
+  </body>
