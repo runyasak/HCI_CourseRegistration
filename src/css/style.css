@@ -25,8 +25,14 @@ h3#detail {
     /*width: 80%;*/
 }
 
+h3#description {
+    margin: auto 31px;
+    margin-bottom: 35px;
+    margin-right: 25px;
+}
+
 #your-course {
-    margin-left: 531px;
+    margin-left: 434px;
 }
 
 .student-name{
@@ -48,24 +54,21 @@ h3#text {
     padding-left: 20px;
 }
 
-/*a.navbar-brand {
-    color: #57B96D;
-    font-size: 30px;
-    line-height: normal;
-}*/
-
-
 .card-inverse .card-text {
     color: #F5F5F5;
     padding-left: 50px;
 }
+input.form-control.ng-pristine.ng-valid.ng-empty.ng-touched {
+    margin-left: 17px;
+}
 
-/*.table thead th {
-    width: 30%;
-    text-align: center;
-    vertical-align: middle;
-}*/
-
+input.form-control.ng-pristine.ng-untouched.ng-valid.ng-empty {
+    margin-left: 10px;
+    width: 275px;
+}
+.form-group {
+    margin-left: 2px;
+}
 .navbar-fixed-top {
     background-color: white;
     border-color: #57B96D;
@@ -73,12 +76,12 @@ h3#text {
 }
 
 .your-course-table-group {
-    margin-left: 1100px;
-    transform: translate(0px, -2904px);
+    margin-left: 1048px;
+    transform: translateY(-3580px);
 }
 
 .table{
-    max-width: 600px;
+    width: 600px;
     vertical-align: middle;
     transform: translate(0px, -150px);
 }
@@ -120,7 +123,7 @@ td {
 }
 
 .form-inline {
-    margin-left: 270px;
+    margin-left: 254px;
     transform: translate(0px, 80px);
 }
 
@@ -286,8 +289,10 @@ nav.navbar.navbar-inverse.sidebar.ng-scope {
     nav:hover .forAnimate{
         opacity: 1;
     }
-    section{
-        padding-left: 15px;
+
+    h1#sections-header {
+        padding-left: 30px;
+        font-size: 30px;
     }
 
 /*Button*/
@@ -348,13 +353,27 @@ INTERESTING STYLES
 }
 
 .download-btns{
-  min-width: 150px;
+  width: 150px;
   background-color: #5bb75b;
   color: white;
   text-align: center;
   line-height: 82px;
   font-size: 1.4em;
   cursor: pointer;
+}
+
+div#drop-btn {
+    background-color: #F95535;
+}
+
+div#register-btn {
+    background-color: #57B9A7;
+    float: right;
+    transform: translateY(-45px);
+}
+
+li.list-group-item.ng-binding {
+    line-height: 3;
 }
 
 .mac-btn,

@@ -61,7 +61,7 @@
       </div> -->
       <form class="form-inline">
         <div class="form-group">
-          <label>Course ID</label>
+          <label>Course</label>
           <input type="text" class="form-control" ng-model="search" placeholder="EX: 01XXXXXX">
         </div>
         <label id="your-course">Your course</label>
@@ -75,9 +75,7 @@
               <th scope="row">{{course.id}}</th>
               <td>{{course.name.en}}</td>
               <td>
-                <!-- Button trigger modal -->
-                <!-- <button class="btn icon-btn btn-success" data-toggle="modal" ng-click="select_enroll(course)" data-target=".enroll-modal" data-backdrop="static" data-keyboard="false"><span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span>Enroll</button> -->
-                <div class="container-enroll-btn">
+                <div class="container-enroll-btn" data-toggle="modal" ng-click="select_enroll(course)" data-target=".enroll-modal" data-backdrop="static" data-keyboard="false">
                   <div class="download-btns">
                     <span class="download-text">Enroll</span>
                   </div>
@@ -109,7 +107,12 @@
               <td>{{course.name.en}}</td>
               <td>
                 <!-- Button trigger modal -->
-                <button class="btn icon-btn btn-danger" data-toggle="modal" ng-click="drop_course(course)"><span class="glyphicon btn-glyphicon glyphicon-minus img-circle text-warning"></span>Drop</button>
+                <!-- <button class="btn icon-btn btn-danger" data-toggle="modal" ng-click="drop_course(course)"><span class="glyphicon btn-glyphicon glyphicon-minus img-circle text-warning"></span>Drop</button> -->
+                <div class="container-enroll-btn" data-toggle="modal" ng-click="drop_course(course)">
+                  <div class="download-btns" id="drop-btn">
+                    <span class="download-text">Drop</span>
+                  </div>
+                </div>
               </td>
             </tr>
             <!-- <tr>
@@ -151,16 +154,26 @@
                     <h1 id="course">{{selected_course.id}} - {{selected_course.name.en}}</h1>
                     <!-- <h4 class="modal-title">Modal title</h4> -->
                   </div>
+                  <h1 id="sections-header">Sections</h1>
                   <div class="modal-body">
                      <ul class="list-group" ng-repeat="section in course_section">
-                        <li class="list-group-item">{{section.id}} - {{section.date}} <button class="btn btn-primary" ng-click="register_course(selected_course)" aria-label="Close" data-dismiss="modal">Register</button></li>
+                        <li class="list-group-item">
+                        <h4>{{section.id}} - {{section.date}} 
+                        <b style="padding-left: 20px;">Instructor:</b> {{section.instructors[0]}}<b style="padding-left: 20px;">Enroll:</b> {{section.enrolled}} / {{section.accept}}</h4> 
+                          <!-- <button class="btn btn-primary" ng-click="register_course(selected_course)" aria-label="Close" data-dismiss="modal">Register</button> -->
+                          <div class="container-enroll-btn" data-toggle="modal" ng-click="register_course(selected_course)" aria-label="Close" data-dismiss="modal">
+                            <div class="download-btns" id="register-btn">
+                              <span class="download-text">Register</span>
+                            </div>
+                          </div>
+                        </li>
 
                         <!-- <li class="list-group-item">Deleted</li> 
                         <li class="list-group-item">Warnings</li>  -->
                      </ul>
                   </div>
                   <!-- <h2 id="enroll">{{selected_course.description.en}}</h2> -->
-                  <h3 id="detail">{{selected_course.description.en}}</h3>
+                  <h3 id="description">{{selected_course.description.en}}</h3>
                   <!-- <h3 id="credit">{{selected_course.description.en}}</h3> -->
                 </div>
               </div>
