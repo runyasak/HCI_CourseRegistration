@@ -83,6 +83,10 @@ h3#text {
     transform: translate(0px, -150px);
 }
 
+td {
+   vertical-align: middle; 
+}
+
 .container {
     width: 300px;
     margin: 200px auto;
@@ -124,25 +128,11 @@ h3#text {
     background-color:#229922;
 }
 
-/*.sidebar {
-    position: fixed;
-    top: 51px;
-    bottom: 0;
-    left: 0;
-    z-index: 1000;
-    display: block;
-    padding: 20px;
-    overflow-x: hidden;
-    overflow-y: auto;
-    background-color: #f5f5f5;
-    border-right: 1px solid #eee;
-    line-height: 3;
-}*/
-
 /*Sidebar*/
 nav.navbar.navbar-inverse.sidebar.ng-scope {
     position: fixed;
     height: 100%;
+
 }
 
     body,html{
@@ -177,6 +167,9 @@ nav.navbar.navbar-inverse.sidebar.ng-scope {
 
     /*small/medium side display*/
     @media (min-width: 768px) {
+        ul.nav.navbar-nav {
+            width: 100%;
+        }
 
         /*Allow main to be next to Nav*/
         .main{
@@ -298,5 +291,170 @@ nav.navbar.navbar-inverse.sidebar.ng-scope {
     }
 
 /*Button*/
-.btn-glyphicon { padding:8px; background:#ffffff; margin-right:4px; }
-.icon-btn { padding: 1px 15px 3px 2px; border-radius:50px;}
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+$green: #5bb75b; // Download green color
+$white: #ffffff;
+$blue-windows: #3498db; // windows color
+$gray-mac: #95a5a6; // Mac Gray color
+$gray-dark:#555555;
+$gray-darkest: #1a1a1a;  
+
+$btnHeight: 82px;
+
+.transition-ano {
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+/************************************\
+Setup
+\************************************/
+
+*{
+  -webkit-box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+body{
+  font-family: 'Open Sans', sans-serif;
+  background: url("http://ghostlab.vanamco.com/img/hero_img.jpg");
+  background-size: cover;
+}
+.container{
+  width: 700px;
+  margin: 10em auto;
+  position: relative;
+}
+
+a:hover{
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+/************************************\
+INTERESTING STYLES
+\************************************/
+
+.btn-wrapper-shop,
+.btn-wrapper-download{
+  height: 82px;
+  float: left;
+}
+
+.download-btns{
+  min-width: 150px;
+  background-color: #5bb75b;
+  color: white;
+  text-align: center;
+  line-height: 82px;
+  font-size: 1.4em;
+  cursor: pointer;
+}
+
+.mac-btn,
+.windows-btn{
+  height: 82px;
+  width: 150px;
+  float: left;
+  font-size: 1.6em;
+}
+
+
+.mac-btn{
+  background-color: $gray-mac;
+}
+.windows-btn{
+  background-color: $blue-windows;
+}
+
+.win-btn-wrapper{
+  display: block;
+  width: 150px;
+  height: 82px;
+  float: left;
+}
+
+.store-btn,
+.download-text{
+  height: 50px;
+  display: block;
+  transform: translateY(-16px);
+  a{  
+    float: left;
+    background-color: $gray-dark;
+    color: white;
+    padding: 0 1.3em;
+    font-size: 1.5em;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    line-height: 82px;
+    text-decoration: none;
+  }
+}
+
+th.ng-binding {
+    vertical-align: middle !important;
+}
+
+td.ng-binding {
+    vertical-align: middle !important;
+}
+
+.store-btn{
+  margin-left: 1em;
+  min-width: 2em;
+}
+
+#shop-info,
+#download-info{
+  color: $white;
+  font-size: 0.8em;
+  text-align: center;
+}
+
+#shop-info{
+  margin-left: 1.2em;
+}
+
+.windows-bit{
+  position: absolute;
+  width: 150px;
+  left: 0px;
+  top: -82px;
+  //border-bottom:20px solid $blue-windows;
+  z-index: 9;
+  li{
+    list-style: none;
+    text-align: center;
+    display: inline-block;
+    float: left;
+    width: 50%;
+    display: table;
+    &:first-child{
+      border-right: 1px solid lighten($gray-darkest, 10%);
+    }
+    a{
+      background-color: $gray-darkest;
+      color: lighten($gray-darkest, 60%);
+      display: block;
+      font-weight: lighter;
+      font-size: 1em;
+      height: 68px;
+      display: table-cell; 
+      vertical-align: middle;
+      text-decoration: none;
+      letter-spacing: 1px;
+      
+      &:hover{
+        background-color: lighten($gray-darkest, 10%);
+        color: $white;
+        @extend .transition-ano;
+      }
+    }
+  }
+}

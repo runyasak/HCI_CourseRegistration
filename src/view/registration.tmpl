@@ -19,8 +19,8 @@
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
             <li ><a href="#">Profile<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>
-            <li ><a href="#">Messages<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span></a></li>
-            <li class="dropdown">
+            <!-- <li ><a href="#">Messages<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span></a></li> -->
+            <!-- <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings <span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-cog"></span></a>
               <ul class="dropdown-menu forAnimate" role="menu">
                 <li><a href="#">Action</a></li>
@@ -31,8 +31,8 @@
                 <li class="divider"></li>
                 <li><a href="#">One more separated link</a></li>
               </ul>
-            </li>
-            <li><a href="#">Home<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+            </li> -->
+            <!-- <li><a href="#">Home<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
             <li ><a href="#">Profile<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>
             <li ><a href="#">Messages<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span></a></li>
             <li class="dropdown">
@@ -46,7 +46,7 @@
                 <li class="divider"></li>
                 <li><a href="#">One more separated link</a></li>
               </ul>
-            </li>
+            </li> -->
           </ul>
         </div>
       </div>
@@ -76,7 +76,12 @@
               <td>{{course.name.en}}</td>
               <td>
                 <!-- Button trigger modal -->
-                <button class="btn icon-btn btn-success" data-toggle="modal" ng-click="select_enroll(course)" data-target=".enroll-modal" data-backdrop="static" data-keyboard="false"><span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span>Enroll</button>
+                <!-- <button class="btn icon-btn btn-success" data-toggle="modal" ng-click="select_enroll(course)" data-target=".enroll-modal" data-backdrop="static" data-keyboard="false"><span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span>Enroll</button> -->
+                <div class="container-enroll-btn">
+                  <div class="download-btns">
+                    <span class="download-text">Enroll</span>
+                  </div>
+                </div>
                 <!-- <a class="btn icon-btn btn-success" href="#"><span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span>Add</a> -->
               </td>
             </tr>

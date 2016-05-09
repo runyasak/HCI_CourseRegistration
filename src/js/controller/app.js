@@ -85,7 +85,7 @@ angular.module('todoApp', ['ui.router'])
         }
 
         $scope.drop_course = function(course){
-            $scope.registered_courses.splice($scope.registered_courses.indexOf(course));
+            $scope.registered_courses.splice($scope.registered_courses.indexOf(course), 1);
         }
 
         $scope.select_enroll = function(course) {
