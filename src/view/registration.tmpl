@@ -108,7 +108,7 @@
               <td>
                 <!-- Button trigger modal -->
                 <!-- <button class="btn icon-btn btn-danger" data-toggle="modal" ng-click="drop_course(course)"><span class="glyphicon btn-glyphicon glyphicon-minus img-circle text-warning"></span>Drop</button> -->
-                <div class="container-enroll-btn" data-toggle="modal" ng-click="drop_course(course)">
+                <div class="container-enroll-btn" data-toggle="modal" data-target=".drop-modal" data-backdrop="static" data-keyboard="false">
                   <div class="download-btns" id="drop-btn">
                     <span class="download-text">Drop</span>
                   </div>
@@ -123,7 +123,7 @@
           </tbody>
         </table>
       </div>
-      <!-- <div class="modal fade drop-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+      <div class="modal fade drop-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
             <div class="modal-header">
@@ -135,14 +135,14 @@
             <div class="modal-body">
                <h2 id="enroll">Are you sure?</h2>
                <div class="confirm-btn-group">
-                 <button class="btn btn-primary" type="button">YES</button>
-                 <button class="btn btn-primary" type="button">NO</button>
+                 <button class="btn btn-primary" type="button" ng-click="drop_course(course)" data-toggle="modal" aria-label="Close" data-dismiss="modal">YES</button>
+                 <button class="btn btn-primary" type="button" data-toggle="modal" aria-label="Close" data-dismiss="modal">NO</button>
                </div>
                
             </div>
           </div>
         </div>
-      </div> -->
+      </div>
 
       <div class="modal fade enroll-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
               <div class="modal-dialog modal-lg">
