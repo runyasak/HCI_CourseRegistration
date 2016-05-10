@@ -68,13 +68,14 @@ h3#text {
     color: #F5F5F5;
     padding-left: 50px;
 }
-input.form-control.ng-pristine.ng-valid.ng-empty.ng-touched {
+/*input.form-control.ng-pristine.ng-valid.ng-empty.ng-touched {
     margin-left: 17px;
-}
+}*/
 
-input.form-control.ng-pristine.ng-untouched.ng-valid.ng-empty {
+#input-course {
     margin-left: 10px;
     width: 275px;
+    margin-bottom: 10px;
 }
 .form-group {
     margin-left: 2px;
@@ -86,7 +87,7 @@ input.form-control.ng-pristine.ng-untouched.ng-valid.ng-empty {
 }
 
 .your-course-table-group {
-    margin-top: -3639px;
+    margin-top: -3668px;
     margin-left: 650px;
 
 }
@@ -106,8 +107,9 @@ td {
    vertical-align: middle; 
 }
 td#td-credit {
-    width: 88px;
+    width: 95px;
     vertical-align: middle;
+    font-size: 15px;
 }
 
 .container {
@@ -148,7 +150,7 @@ td#td-credit {
 /*Sidebar*/
 nav.navbar.navbar-inverse.sidebar.ng-scope {
     position: fixed;
-    height: 100%;
+    height: 200%;
 
 }
 
@@ -383,7 +385,8 @@ div#drop-btn {
 div#register-btn {
     background-color: #57B9A7;
     float: right;
-    margin-top: -5.4%;
+    margin-top: -44px;
+    font-weight: lighter;
 }
 
 li.list-group-item.ng-binding {

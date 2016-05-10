@@ -62,8 +62,8 @@
       <div class="table-group">
         <form class="form-inline" style="margin-left: 4px;">
           <div class="form-group">
-            <label>Course</label>
-            <input type="text" class="form-control" ng-model="search" placeholder="EX: 01XXXXXX">
+            <label><h3 style="font-weight: bold;">Course</h3></label>
+            <input type="text" id="input-course" class="form-control" ng-model="search" placeholder="Search by Course ID or Name">
           </div>
         </form>
         <table class="table" id="course-table">
@@ -95,7 +95,7 @@
 
       <!-- Your course table -->
       <div class="your-course-table-group"> 
-      <label id="your-course">Your course</label>
+      <label><h3 style="font-weight: bold;margin-left: 378px;">Your course </h3></label>
         <table class="table" id="registered-table">
           <thead class="thead-inverse">
             <!-- <tr>
@@ -107,7 +107,8 @@
             <tr>
               <th scope="row">{{course.id}}</th>
               <td>{{course.name.en}}</td>
-              <td id="td-credit">{{course.credit.total}} ({{course.credit.lecture}} - {{course.credit.lab}} - {{course.credit.self}})</td>
+              <!-- <td id="td-credit">{{course.credit.total}} ({{course.credit.lecture}} - {{course.credit.lab}} - {{course.credit.self}})</td> -->
+              <td id="td-credit"><b>Credit:</b> {{course.credit.total}}</td>
               <td>
                 <!-- Button trigger modal -->
                 <!-- <button class="btn icon-btn btn-danger" data-toggle="modal" ng-click="drop_course(course)"><span class="glyphicon btn-glyphicon glyphicon-minus img-circle text-warning"></span>Drop</button> -->
@@ -124,7 +125,9 @@
               <td><button type="submit" class="btn btn-primary">Enroll</button></td>
             </tr> -->
           </tbody>
+          <!-- <div>Total: 0 / 22</div> -->
         </table>
+        <h3 style="float: right; margin-right: 285px;"><b>Total Credit:</b> 0 / 22</h3>
       </div>
       <div class="modal fade drop-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
@@ -135,11 +138,21 @@
               </button>
               <h1 id="course">Confirmation</h1>
             </div>
-            <div class="modal-body">
-               <h2 id="enroll">Are you sure?</h2>
-               <div class="confirm-btn-group">
-                 <button class="btn btn-primary" type="button" ng-click="drop_course(course)" data-toggle="modal" aria-label="Close" data-dismiss="modal">YES</button>
-                 <button class="btn btn-primary" type="button" data-toggle="modal" aria-label="Close" data-dismiss="modal">NO</button>
+            <div class="modal-body" style="height: 190px;">
+               <h2 id="enroll">Do you want to drop "{{selected_course.id}} - {{selected_course.name.en}}"?</h2>
+               <div class="confirm-btn-group" style="float: right; margin-top: 20px;" >
+                 <!-- <button class="btn btn-primary" type="button" ng-click="drop_course(course)" data-toggle="modal" aria-label="Close" data-dismiss="modal">YES</button> -->
+                 <div class="container-enroll-btn" data-toggle="modal" style="display: inline-block;" ng-click="drop_course(course)"  data-backdrop="static" aria-label="Close" data-dismiss="modal">
+                    <div class="download-btns">
+                      <span class="download-text">Yes</span>
+                    </div>
+                  </div>
+                 <!-- <button class="btn btn-primary" type="button" data-toggle="modal" aria-label="Close" data-dismiss="modal">NO</button> -->
+                 <div class="container-enroll-btn" style="display: inline-block;" data-toggle="modal" data-backdrop="static" aria-label="Close" data-dismiss="modal">
+                    <div class="download-btns" id="drop-btn">
+                      <span class="download-text">No</span>
+                    </div>
+                  </div>
                </div>
                
             </div>
