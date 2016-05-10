@@ -2,6 +2,10 @@ body {
     line-height: 1.42857143;
 }
 
+.ng-scope {
+    margin-top: -84px;
+}
+
 label {
     font-size: 20px;
 }
@@ -20,6 +24,10 @@ h3#detail {
     font-size: 25px;
 }
 
+ul.list-group.ng-scope {
+    margin-top: -1%;
+}
+
 .btn-block {
     display: block;
     /*width: 80%;*/
@@ -29,10 +37,11 @@ h3#description {
     margin: auto 31px;
     margin-bottom: 35px;
     margin-right: 25px;
+    font-size: 20px;
 }
 
 #your-course {
-    margin-left: 434px;
+    margin-left: 30%;
 }
 
 .course-credit {
@@ -40,11 +49,9 @@ h3#description {
 }
 
 .student-name{
-    transform: translate(550px, 150px);
     font-weight: bold;
 }
 .student-id{
-    transform: translate(550px, 150px);
     font-size: 30px;
 }
 
@@ -80,14 +87,20 @@ input.form-control.ng-pristine.ng-untouched.ng-valid.ng-empty {
 }
 
 .your-course-table-group {
-    margin-left: 1048px;
-    transform: translateY(-3580px);
+    margin-top: -191.1%;
+    margin-left: 35%;
+
 }
 
 .table{
     width: 600px;
     vertical-align: middle;
-    transform: translate(0px, -150px);
+    margin-top: 3%;
+}
+
+table#registered-table {
+    margin-left: 30%;
+    margin-top: 2%;
 }
 
 td {
@@ -111,7 +124,6 @@ td#td-credit {
 .card#academic-information{
     max-width: 800px;
     margin: auto;
-    transform: translate(0px, -150px);
     height: 400px;
 }
 
@@ -121,18 +133,13 @@ td#td-credit {
 
 .table-group {
     width: 600px;
-    margin: 250px;
+    margin: 250px 315px;
 }
 
 .form-signin{
     max-width: 330px;
     padding: 15px;
     margin: 0 auto;
-}
-
-.form-inline {
-    margin-left: 254px;
-    transform: translate(0px, 80px);
 }
 
 #my-nav {
@@ -365,7 +372,7 @@ INTERESTING STYLES
   background-color: #5bb75b;
   color: white;
   text-align: center;
-  line-height: 82px;
+  line-height: 50px;
   font-size: 1.4em;
   cursor: pointer;
 }
@@ -377,7 +384,7 @@ div#drop-btn {
 div#register-btn {
     background-color: #57B9A7;
     float: right;
-    transform: translateY(-45px);
+    margin-top: -5.4%;
 }
 
 li.list-group-item.ng-binding {
@@ -411,7 +418,6 @@ li.list-group-item.ng-binding {
 .download-text{
   height: 50px;
   display: block;
-  transform: translateY(-16px);
   a{  
     float: left;
     background-color: $gray-dark;

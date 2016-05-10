@@ -59,14 +59,13 @@
               <li ng-click="export_json()"><a href="#">Export JSON</a></li>
             </ul>
       </div> -->
-      <form class="form-inline">
-        <div class="form-group">
-          <label>Course</label>
-          <input type="text" class="form-control" ng-model="search" placeholder="EX: 01XXXXXX">
-        </div>
-        <label id="your-course">Your course</label>
-      </form>
-      <div class="table-group"> 
+      <div class="table-group">
+        <form class="form-inline">
+          <div class="form-group">
+            <label>Course</label>
+            <input type="text" class="form-control" ng-model="search" placeholder="EX: 01XXXXXX">
+          </div>
+        </form>
         <table class="table" id="course-table">
           <thead class="thead-inverse">
           </thead>
@@ -96,6 +95,7 @@
 
       <!-- Your course table -->
       <div class="your-course-table-group"> 
+      <label id="your-course">Your course</label>
         <table class="table" id="registered-table">
           <thead class="thead-inverse">
             <!-- <tr>
