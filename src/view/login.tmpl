@@ -1,0 +1,21 @@
+<body>
+	<div ng-controller="appController as app">
+		<form class="form-signin" ng-submit="login_submit(datas)">
+      <div class="container" style="width: inherit;">
+          <h2 class="form-signin-heading">KU Registration</h2>
+          <label for="inputID" class="sr-only">Student ID</label>
+          <input class="form-control" ng-model="input_data.id" placeholder="Student ID" required="" autofocus="">
+          <label for="inputPassword" class="sr-only">Password</label>
+          <input type="password" class="form-control" ng-model="input_data.password" placeholder="Password" required="">
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" value="remember-me"> Remember me
+            </label>
+          </div>
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+          <!-- <button class="btn btn-lg btn-primary btn-block">Register</button> -->
+      </div>
+      </form>
+
+	</div>
+</body>
