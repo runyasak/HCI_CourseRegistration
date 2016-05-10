@@ -87,8 +87,9 @@ h3#text {
 }
 
 .your-course-table-group {
-    margin-top: -3668px;
-    margin-left: 650px;
+    position: fixed;
+    left: 1000px;
+    top: 76px;
 
 }
 
@@ -99,7 +100,7 @@ h3#text {
 }
 
 table#registered-table {
-    margin-left: 375px;
+    /*margin-left: 375px;*/
     margin-top: 26px;
 }
 
