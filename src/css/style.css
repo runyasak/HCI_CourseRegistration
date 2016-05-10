@@ -25,12 +25,11 @@ h3#detail {
 }
 
 ul.list-group.ng-scope {
-    margin-top: -1%;
+    margin-top: -11px;
 }
 
 .btn-block {
     display: block;
-    /*width: 80%;*/
 }
 
 h3#description {
@@ -41,7 +40,7 @@ h3#description {
 }
 
 #your-course {
-    margin-left: 30.2%;
+    margin-left: 379px;
 }
 
 .course-credit {
@@ -87,20 +86,20 @@ input.form-control.ng-pristine.ng-untouched.ng-valid.ng-empty {
 }
 
 .your-course-table-group {
-    margin-top: -191.1%;
-    margin-left: 35%;
+    margin-top: -3639px;
+    margin-left: 650px;
 
 }
 
 .table{
     width: 600px;
     vertical-align: middle;
-    margin-top: 3%;
+    margin-top: 20px;
 }
 
 table#registered-table {
-    margin-left: 30%;
-    margin-top: 2%;
+    margin-left: 375px;
+    margin-top: 26px;
 }
 
 td {
