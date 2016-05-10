@@ -10,6 +10,7 @@ angular.module('todoApp', ['ui.router'])
         $scope.course_section ;
         $scope.registered_courses = [];
         $scope.export_registered = [];
+        $scope.your_credit = 0;
 
         // $scope.course = {"A", "B", "C"};
         
@@ -83,9 +84,11 @@ angular.module('todoApp', ['ui.router'])
 
         $scope.register_course = function(course) {
             $scope.registered_courses.push(course);
+            $scope.your_credit += course.credit.total;
         }
 
         $scope.drop_course = function(course){
+            $scope.your_credit -= course.credit.total;
             $scope.registered_courses.splice($scope.registered_courses.indexOf(course), 1);
         }
 

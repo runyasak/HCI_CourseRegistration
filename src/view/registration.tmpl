@@ -112,7 +112,7 @@
               <td>
                 <!-- Button trigger modal -->
                 <!-- <button class="btn icon-btn btn-danger" data-toggle="modal" ng-click="drop_course(course)"><span class="glyphicon btn-glyphicon glyphicon-minus img-circle text-warning"></span>Drop</button> -->
-                <div class="container-enroll-btn" data-toggle="modal" data-target=".drop-modal" data-backdrop="static" data-keyboard="false" style="float: right;">
+                <div class="container-enroll-btn" ng-click="select_enroll(course)" data-toggle="modal" data-target=".drop-modal" data-backdrop="static" data-keyboard="false" style="float: right;">
                   <div class="download-btns" id="drop-btn">
                     <span class="download-text">Drop</span>
                   </div>
@@ -127,7 +127,7 @@
           </tbody>
           <!-- <div>Total: 0 / 22</div> -->
         </table>
-        <h3 style="float: right; margin-right: 285px;"><b>Total Credit:</b> 0 / 22</h3>
+        <h3 style="float: right; margin-right: 285px;"><b>Total Credit:</b> {{your_credit}} / 22</h3>
       </div>
       <div class="modal fade drop-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
@@ -142,7 +142,7 @@
                <h2 id="enroll">Do you want to drop "{{selected_course.id}} - {{selected_course.name.en}}"?</h2>
                <div class="confirm-btn-group" style="float: right; margin-top: 20px;" >
                  <!-- <button class="btn btn-primary" type="button" ng-click="drop_course(course)" data-toggle="modal" aria-label="Close" data-dismiss="modal">YES</button> -->
-                 <div class="container-enroll-btn" data-toggle="modal" style="display: inline-block;" ng-click="drop_course(course)"  data-backdrop="static" aria-label="Close" data-dismiss="modal">
+                 <div class="container-enroll-btn" data-toggle="modal" style="display: inline-block;" ng-click="drop_course(selected_course)"  data-backdrop="static" aria-label="Close" data-dismiss="modal">
                     <div class="download-btns">
                       <span class="download-text">Yes</span>
                     </div>
