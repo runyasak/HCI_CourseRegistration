@@ -37,6 +37,7 @@ angular.module('todoApp', ['ui.router'])
         }).then(function success (response) {
             // var result = response.data;
             $scope.courses = $.map(response.data, function(value, index) {return [value];})
+            console.log($scope.courses)
             // $scope.user_data = response.data;
         });
 

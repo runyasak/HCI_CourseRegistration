@@ -74,6 +74,8 @@
             <tr>
               <th scope="row">{{course.id}}</th>
               <td>{{course.name.en}}</td>
+              <td id="td-credit">{{course.credit.total}} ({{course.credit.lecture}}<b class="course-credit"ng-if="!course.credit.lecture && course.credit.lecture != 0">0</b> - {{course.credit.lab}}<b class="course-credit" ng-if="!course.credit.lab && course.credit.lab != 0">0</b> - {{course.credit.self}}<b class="course-credit" ng-if="!course.credit.self&& course.credit.self != 0">0</b>)</td>
+              <!-- <td id="td-credit">{{course.credit.total}} ({{course.credit.lecture}}<b class="course-credit"ng-if="!course.credit.lecture">0</b> - {{course.credit.lab}} - {{course.credit.self}})</td> -->
               <td>
                 <div class="container-enroll-btn" data-toggle="modal" ng-click="select_enroll(course)" data-target=".enroll-modal" data-backdrop="static" data-keyboard="false">
                   <div class="download-btns">
@@ -105,10 +107,11 @@
             <tr>
               <th scope="row">{{course.id}}</th>
               <td>{{course.name.en}}</td>
+              <td id="td-credit">{{course.credit.total}} ({{course.credit.lecture}} - {{course.credit.lab}} - {{course.credit.self}})</td>
               <td>
                 <!-- Button trigger modal -->
                 <!-- <button class="btn icon-btn btn-danger" data-toggle="modal" ng-click="drop_course(course)"><span class="glyphicon btn-glyphicon glyphicon-minus img-circle text-warning"></span>Drop</button> -->
-                <div class="container-enroll-btn" data-toggle="modal" data-target=".drop-modal" data-backdrop="static" data-keyboard="false">
+                <div class="container-enroll-btn" data-toggle="modal" data-target=".drop-modal" data-backdrop="static" data-keyboard="false" style="float: right;">
                   <div class="download-btns" id="drop-btn">
                     <span class="download-text">Drop</span>
                   </div>

@@ -35,6 +35,10 @@ h3#description {
     margin-left: 434px;
 }
 
+.course-credit {
+    font-weight: lighter;
+}
+
 .student-name{
     transform: translate(550px, 150px);
     font-weight: bold;
@@ -88,6 +92,10 @@ input.form-control.ng-pristine.ng-untouched.ng-valid.ng-empty {
 
 td {
    vertical-align: middle; 
+}
+td#td-credit {
+    width: 88px;
+    vertical-align: middle;
 }
 
 .container {
