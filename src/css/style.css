@@ -142,6 +142,7 @@ td#td-credit {
     max-width: 330px;
     padding: 15px;
     margin: 0 auto;
+    margin-top: 10%
 }
 
 #my-nav {
@@ -149,9 +150,10 @@ td#td-credit {
 }
 
 /*Sidebar*/
-nav.navbar.navbar-inverse.sidebar.ng-scope {
+nav.navbar.navbar-inverse.sidebar {
     position: fixed;
     height: 200%;
+        margin-top: -82px;
 
 }
 

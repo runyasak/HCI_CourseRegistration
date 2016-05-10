@@ -2,7 +2,7 @@ angular.module('todoApp')
 .config(function($stateProvider, $urlRouterProvider) {
   //
   // For any unmatched url, redirect to /home
-  $urlRouterProvider.otherwise("/registration");
+  $urlRouterProvider.otherwise("/login");
   //
   // Now set up the states
   $stateProvider
@@ -17,5 +17,9 @@ angular.module('todoApp')
     .state('registration', {
       url: "/registration",
       templateUrl: "src/view/registration.tmpl"
+    })
+    .state('login', {
+      url: "/login",
+      templateUrl: "src/view/login.tmpl"
     })
 });

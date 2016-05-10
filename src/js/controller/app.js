@@ -48,9 +48,8 @@ angular.module('todoApp', ['ui.router'])
             // console.log('yes');
             // console.log($scope.user_data);
 
-            if($scope.user_data.user.id == $scope.input_data.id
-                && $scope.user_data.user.password == $scope.input_data.password)
-                $window.location.href = 'main.html';
+            if($scope.user_data.user.id == $scope.input_data.id)
+                $window.location.href = '#/registration';
             else
                 alert('wrong');
         };
